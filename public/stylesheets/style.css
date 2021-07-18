@@ -1,0 +1,106 @@
+/* ===================
+HEADER
+====================== */
+
+.heading_secondary {
+	padding-left: 1em;
+}
+
+.navbar-brand {
+  width: 40%;
+}
+
+.navbar-grey {
+  color: #f9f7f0;
+}
+
+.navbar-custom {
+    background-color: #493cd8;
+}
+
+#navbarText {
+	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.7);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+/*=====================================
+banner              
+=======================================*/
+.banner {
+	background: url(../images/banner.jpg) no-repeat center center;
+	background-size: cover;
+	height: 87vh;
+	width: 100%;
+	/* padding-top: 154px; */
+	position: relative;
+}
+
+.banner__text-box {
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	padding-top: 25vh;
+}
+
+.banner-primary {
+	color: #fff;
+	text-transform: uppercase;
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+}
+.banner-primary--main {
+	display: block;
+	font-family: 'Pacifico', cursive;
+	font-size: 5rem;
+	font-weight: 400;
+	letter-spacing: 3.5rem;
+	animation-name: moveInLeft;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+}
+
+@media only screen and (max-width: 37.5em) {
+	.banner-primary--main {
+		letter-spacing: 1rem;
+		font-size: 5rem;
+	}
+}
+
+.banner-primary--sub {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 1.75rem;
+	animation: moveInRight 1s ease-out;
+}
+@media only screen and (max-width: 37.5em) {
+	.banner-primary--sub {
+		letter-spacing: 0.5rem;
+	}
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+#verse {
+	padding-left: 17%;
+}
+
+.secondary_text {
+	font-size: 2em;
+}

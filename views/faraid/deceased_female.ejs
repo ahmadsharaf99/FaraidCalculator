@@ -1,0 +1,161 @@
+<%- include('../partials/layout') %>
+    <div class="container body">
+        <div class="main_container">
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3 class="heading_secondary">Female Deceased Page</h3>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 ">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Enter Information <small>female deceased only</small></h2>
+                                    <div class="clearfix"></div>
+                                    </div> 
+                                    <div class="x_content">
+                                        <br />
+                                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return render_result()" method="POST"  action="/faraid/female">
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="t_share">Total Share (in Currency): <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" id="t_share" name="t_share"
+                                                     required="required" class="form-control ">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="b_share">Bequest Share (in Currency): <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" id="b_share" name="b_share" required="required" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label for="sons" class="col-form-label col-md-3 col-sm-3 label-align">Sons: </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input id="sons" class="form-control"
+                                                    type="number" name="sons">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label for="daughters" class="col-form-label col-md-3 col-sm-3 label-align">Daugthers: </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input id="daughters" class="form-control" type="number"  name="daughters">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 label-align">Father: </label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <select class="form-control" name="father" id="father">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 label-align">Mother: </label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <select class="form-control" name="mother" id="mother">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 label-align">Husband: </label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <select class="form-control" name="husband" id="husband">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="item form-group">
+                                                <label for="brothers" class="col-form-label col-md-3 col-sm-3 label-align">Brothers: </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input id="brothers"  class="form-control" type="number" name="brothers">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label for="brothers" class="col-form-label col-md-3 col-sm-3 label-align">Sisters: </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input id="sisters"  class="form-control" type="number" name="sisters">
+                                                </div>
+                                            </div>
+            
+                                            <div class="ln_solid"></div>
+                                            <div class="item form-group">
+                                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                                    <button class="btn btn-primary" type="button">Cancel</button>
+                                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table for computed output -->
+                    <div class="row" style="display: block;">
+                        <div class="col-md-12 col-sm-12">
+                          <div class="x_panel">
+                            <div class="x_title">
+                              <h2>Division of Inheritance</h2>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+          
+                              <table class="table" id="sdmf_table">
+                                <thead>
+                                  <tr>
+                                    <th>The Share of Sons</th>
+                                    <th>The Share of Daughters</th>
+                                    <th>The Share of Mother</th>
+                                    <th>The Share of Father</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th id="son_share">0</th>
+                                    <td id="dau_share">0</td>
+                                    <td id="mother_share">0</td>
+                                    <td id="father_share">0</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                              <table class="table" id="bswr_table">
+                                <thead>
+                                  <tr>
+                                    <th>The Share of Brothers</th>
+                                    <th>The Share of Sisters</th>
+                                    <th>The Share of Husband</th>
+                                    <th>Remaining Share</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th id="bro_share">0</th>
+                                    <td id="sis_share">0</td>
+                                    <td id="husband_share">0</td>
+                                    <td id="rem_share">0</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/female_faraid_calc.js"></script>
+</body>
+</html>
