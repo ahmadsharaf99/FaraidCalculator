@@ -18,12 +18,12 @@
                                     </div> 
                                     <div class="x_content">
                                         <br />
-                                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return render_result()" method="POST"  action="/faraid/female">
+                                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" onsubmit="return false">
                                             <div class="item form-group">
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="t_share">Total Share (in Currency): <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input type="text" id="t_share" name="t_share"
+                                                    <input type="text" id="t_share"
                                                      required="required" class="form-control ">
                                                 </div>
                                             </div>
@@ -31,26 +31,26 @@
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="b_share">Bequest Share (in Currency): <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input type="text" id="b_share" name="b_share" required="required" class="form-control">
+                                                    <input type="text" id="b_share" required="required" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="item form-group">
                                                 <label for="sons" class="col-form-label col-md-3 col-sm-3 label-align">Sons: </label>
                                                 <div class="col-md-6 col-sm-6 ">
                                                     <input id="sons" class="form-control"
-                                                    type="number" name="sons">
+                                                    type="number">
                                                 </div>
                                             </div>
                                             <div class="item form-group">
                                                 <label for="daughters" class="col-form-label col-md-3 col-sm-3 label-align">Daugthers: </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input id="daughters" class="form-control" type="number"  name="daughters">
+                                                    <input id="daughters" class="form-control" type="number">
                                                 </div>
                                             </div>
                                             <div class="item form-group">
                                                 <label class="control-label col-md-3 col-sm-3 label-align">Father: </label>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <select class="form-control" name="father" id="father">
+                                                    <select class="form-control" id="father">
                                                         <option value="0">No</option>
                                                         <option value="1">Yes</option>
                                                     </select>
@@ -59,7 +59,7 @@
                                             <div class="item form-group">
                                                 <label class="control-label col-md-3 col-sm-3 label-align">Mother: </label>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <select class="form-control" name="mother" id="mother">
+                                                    <select class="form-control" id="mother">
                                                         <option value="0">No</option>
                                                         <option value="1">Yes</option>
                                                     </select>
@@ -68,7 +68,7 @@
                                             <div class="item form-group">
                                                 <label class="control-label col-md-3 col-sm-3 label-align">Husband: </label>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <select class="form-control" name="husband" id="husband">
+                                                    <select class="form-control" id="husband">
                                                         <option value="0">No</option>
                                                         <option value="1">Yes</option>
                                                     </select>
@@ -78,22 +78,21 @@
                                             <div class="item form-group">
                                                 <label for="brothers" class="col-form-label col-md-3 col-sm-3 label-align">Brothers: </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input id="brothers"  class="form-control" type="number" name="brothers">
+                                                    <input id="brothers"  class="form-control" type="number">
                                                 </div>
                                             </div>
                                             <div class="item form-group">
                                                 <label for="brothers" class="col-form-label col-md-3 col-sm-3 label-align">Sisters: </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input id="sisters"  class="form-control" type="number" name="sisters">
+                                                    <input id="sisters"  class="form-control" type="number">
                                                 </div>
                                             </div>
             
                                             <div class="ln_solid"></div>
                                             <div class="item form-group">
                                                 <div class="col-md-6 col-sm-6 offset-md-3">
-                                                    <button class="btn btn-primary" type="button">Cancel</button>
                                                     <button class="btn btn-primary" type="reset">Reset</button>
-                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                    <button type="submit" class="btn btn-success" id="submitButton">Submit</button>
                                                 </div>
                                             </div>
                                     </form>
@@ -122,7 +121,7 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <th id="son_share">0</th>
+                                    <td id="son_share">0</td>
                                     <td id="dau_share">0</td>
                                     <td id="mother_share">0</td>
                                     <td id="father_share">0</td>
@@ -141,7 +140,7 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <th id="bro_share">0</th>
+                                    <td id="bro_share">0</td>
                                     <td id="sis_share">0</td>
                                     <td id="husband_share">0</td>
                                     <td id="rem_share">0</td>
@@ -155,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script src="/javascripts/female_faraid_calc.js"></script>
+    </div> 
 </body>
+<script src="/javascripts/female_faraid_calc.js"></script>
 </html>

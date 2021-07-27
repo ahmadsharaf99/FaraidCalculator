@@ -8,10 +8,6 @@ router.get('/male', (req, res, next) => {
 
 router.get('/female', (req, res, next) => {
     res.render('faraid/deceased_female');
-})
-
-// router.post("/female", (req, res, next) => {
-//   res.status(201).render("faraid/deceased_female");
-// });
+});
 
 module.exports = router;
