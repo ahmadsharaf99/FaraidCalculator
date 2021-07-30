@@ -68,8 +68,9 @@ function handleComputation() {
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 1 && num_of_bro == 0 && num_of_sis == 0) {
         mother_share = (mother == 1 ? (1 / 3) * total_PRS : 0);
         half_PRS = total_PRS / 2;
-        wives_share = (num_of_wives > 0 ? (1 / 4) * half_PRS : 0);
-        father_share = total_PRS - (mother_share + (wives_share *   num_of_wives));
+        rem_aft_wif = total_PRS - mother_share;
+        wives_share = (num_of_wives > 0 ? (1 / 4) * rem_aft_wif : 0);
+        father_share = total_PRS - (mother_share + wives_share);
     }
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 0 && mother == 1 && (num_of_bro + num_of_sis) >= 2) {
         mother_share = (1 / 6) * total_PRS;
