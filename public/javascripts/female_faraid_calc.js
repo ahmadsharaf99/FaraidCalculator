@@ -10,7 +10,7 @@ var individual_share = 0;
 var one_third_PRS = 0; 
 var half_PRS = 0;
 var rem_aft_dau_share = 0;
-var rem_aft_hus = 0;
+var x_share = 0;
 var rem_share = 0;
 
 function handleComputation() {
@@ -41,22 +41,25 @@ function handleComputation() {
     // Determine if there are children's shares
     if (num_of_sons > 0) {
         husband_share = (husband == 1 ? (1 / 4) * total_PRS : 0);
-        rem_aft_hus = total_PRS - husband_share;
+        mother_share = (mother == 1 ? (1 / 6) * total_PRS : 0);
+        father_share = (father == 1 ? (1 / 6) * total_PRS : 0);
+        x_share = total_PRS - husband_share - mother_share - father_share;
         // sons shares
-        sons_shares = num_of_sons * (2 * (rem_aft_hus / (2 * num_of_sons + num_of_daugthers)));
+        sons_shares = num_of_sons * (2 * (x_share / (2 * num_of_sons + num_of_daugthers)));
         // daughters shares
-        daughters_shares = (num_of_daugthers > 0 ? num_of_daugthers * (rem_aft_hus / (2 * num_of_sons + num_of_daugthers)) : 0);
+        daughters_shares = (num_of_daugthers > 0 ? num_of_daugthers * (x_share / (2 * num_of_sons + num_of_daugthers)) : 0);
     } 
     else if (num_of_sons == 0 && num_of_daugthers >= 2) {
         daughters_shares = 2 * (total_PRS / 3);
-
+        rem_aft_dau_share = total_PRS - daughters_shares;
+        husband_share = (husband == 1 ? (1 / 4) * rem_aft_dau_share : 0);
         mother_share = (mother == 1 ? (1 / 6) * rem_aft_dau_share : 0);
         father_share = (father == 1 ? (1 / 6) * rem_aft_dau_share : 0);
         brother_share = (num_of_bro ? (1/ 4) * rem_aft_dau_share : 0);
     }
     else if (num_of_sons == 0 && num_of_daugthers == 1) {
         daughters_shares = total_PRS / 2;
-
+        husband_share = (husband == 1 ? (1 / 4) * total_PRS : 0);
         rem_aft_dau_share = total_PRS - daughters_shares;
         mother_share = (mother == 1 ? (1 / 6) * rem_aft_dau_share : 0);
         father_share = (father == 1 ? (1 / 6) * rem_aft_dau_share : 0);

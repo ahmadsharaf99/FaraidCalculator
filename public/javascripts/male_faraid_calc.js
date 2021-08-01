@@ -42,7 +42,9 @@ function handleComputation() {
     if (num_of_sons > 0) {
         // wives shares
         wives_share = (num_of_wives > 0 ? (1 / 8) * total_PRS : 0);
-        rem_aft_wif = total_PRS - wives_share;
+        mother_share = (mother == 1 ? (1 / 6) * total_PRS : 0);
+        father_share = (father == 1 ? (1 / 6) * total_PRS : 0);
+        rem_aft_wif = total_PRS - wives_share - mother_share - father_share;
         // sons shares
         sons_shares = num_of_sons * (2 * (rem_aft_wif / (2 * num_of_sons + num_of_daugthers)));
         // daughters shares
@@ -93,7 +95,7 @@ function handleComputation() {
         mother_share = (1 / 3) * total_PRS;
         sister_share = (1 / 6) * total_PRS;
         half_PRS = total_PRS / 2;
-        wives_share = (num_of_wives > 0 ? (1 / 4) * half_PRS : 0);
+        wives_share = (num_of_wives > 0 ? (1 / 4) * total_PRS: 0);
         mother_share += total_PRS - (mother_share + sister_share + (wives_share * num_of_wives));
     }
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 0 && mother == 0 && num_of_bro == 0 && num_of_sis == 1) {
@@ -127,16 +129,16 @@ function handleComputation() {
         mother_share += total_PRS - (mother_share + (wives_share * num_of_wives));
     }
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 0 && mother == 0 && num_of_bro == 0 && num_of_sis == 0) {
-        half_PRS = total_PRS / 2;
-        wives_share = (num_of_wives > 0 ? (1 / 4) * half_PRS : 0);
+        // half_PRS = total_PRS / 2;
+        wives_share = (num_of_wives > 0 ? (1 / 4) * total_PRS : 0);
     }
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 1 && mother == 1 && (num_of_bro + num_of_sis) >= 2) {
         mother_share = (1 / 6) * total_PRS;
         one_third_PRS = (1 / 3) * total_PRS;
         brother_share = num_of_bro * (2 * (one_third_PRS / (2 * num_of_bro  + num_of_sis)));
         sister_share = num_of_sis* (one_third_PRS/ (2 * num_of_bro  + num_of_sis));
-        half_PRS = total_PRS / 2;
-        wives_share = (num_of_wives > 0 ? (1 / 4) * half_PRS : 0);
+        // half_PRS = total_PRS / 2;
+        wives_share = (num_of_wives > 0 ? (1 / 4) * total_PRS : 0);
         father_share = total_PRS - (mother_share + brother_share + sister_share + (wives_share * num_of_wives));
     } 
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 1 && mother == 1 && num_of_bro == 1 && num_of_sis == 0) {
@@ -158,7 +160,7 @@ function handleComputation() {
         brother_share = num_of_bro * (2 * (one_third_PRS / (2 * num_of_bro + num_of_sis)));
         sister_share = num_of_sis * (one_third_PRS / (2 * num_of_bro + num_of_sis));
         half_PRS = total_PRS / 2;
-        wives_share = (num_of_wives > 0 ? (1 / 4) * half_PRS : 0);
+        // wives_share = (num_of_wives > 0 ? (1 / 4) * total_PRS : 0);
         father_share = total_PRS - (brother_share + sister_share + (wives_share * num_of_wives ));
     }
     else if (num_of_sons == 0 && num_of_daugthers == 0 && father == 1 && mother == 0 && num_of_bro == 1 && num_of_sis == 0) {
